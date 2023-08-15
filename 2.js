@@ -12,7 +12,7 @@
   //1) define a new array called PierceCo with elements "Tacoma", "Sumner", "Puyallup".
   var PierceCo = ["Tacoma", "Sumner", "Puyallup"];
   //2) Combine PierceCo with KingCo to make a new array called Metro.
-  var Metro = [KingCo, PierceCo];
+  var Metro = KingCo.concat(PierceCo);
   output+=Metro.toString() + "<br>";
 
   //3)Put "Everett" on the ride hand end of Metro.
@@ -32,8 +32,7 @@
   output+=Metro.toString() + "<br>";
 
   //7) Replace Kirkland and Mercer Island with Tukwila.
-  KingCo.pop();
-  KingCo[2] = "Tukwila";
+  Metro.splice(3, 2, "Tukwila");
   output+=Metro.toString() + "<br>";
 
   //8) Place Metro into reverse alphabetical order.
