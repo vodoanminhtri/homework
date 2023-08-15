@@ -15,32 +15,31 @@
   function Dice(sides) {
     this.sides = sides;
     this.values = [];
-    for(i = 0; i < this.sides; i++){
+    for( i = 0; i <= this.sides; i++){
       this.values[i]=i;
     }
 
     var pokerSide = ["A", "K", "Q", "J", "10", "9"];
     this.poker = function() {
-      for(i = 0; i < this.sides; i++){
+      for(var i = 0; i <= this.sides; i++){
         this.values[i] = pokerSide[i];
       }
-      
+    }  //curly bracket missing
+    
     this.roll = function() {
       var showing = Math.ceil(Math.random()*this.sides);
-      return this.values[showing];
+      return this.values[showing]; // since the array start at 1
     }
     }
-  } //curly bracket missing
-
 
   var myDice = []; //myDice was spelled as myDie
-  for (c = 0; c < 5; c++){
+  for (var c = 0; c < 5; c++){
     myDice[c] = new Dice(5); 
     myDice[c].poker();
   }
 
   var output = "";
-  for(k = 0; k < 5; k++){
+  for(var k = 0; k < 5; k++){
     output += myDice[k].roll();
     output += " ";
   }
