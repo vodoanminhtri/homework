@@ -1,52 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <title>Quarterly Branch Banking Employee Survey</title>
+</head>
 <body>
+    <h1>Q3 Branch Banking Employee Survey</h1>
+    <form id="Survey">
+        Full Name:
+        <input type="text" id="fullName" placeholder="Enter your Full Name"><br>
+        Email:
+        <input type="text" id="eMail" placeholder="Enter your Email"><br>
+        Employee ID:
+        <input type="number" id="eppID" placeholder="Enter your Employee ID"><br>
+        Application for recommendation:
+        <select id="appName">
+            <option value=""></option>
+            <option value="TellerView">TellerView</option>
+            <option value="CRV">CRV</option>
+            <option value="SVP">SVP</option>
+        </select><br>
+        Please provide the feature/process you would like to make recommendation on:<br>
+        <input type="text" id="appRec" placeholder="Your recommendation(s)"><br>
+        <input type="button" id="btn" value="Submit" onclick="return(Submission())">
 
-<script>
+        <script>
+            var full = document.getElementById("fullName").value;
+            var email = document.getElementById("eMail").value;
+            var eID = document.getElementById("eppID").value;
+            var app = document.getElementById("appName").value;
+            var rec = document.getElementById("appRec").value;
 
-  /* *************POKER DICE ***************
+            function Submission(){
+                if (!full){
+                    alert("Please provide your Full Name");
+                }else{
+                    document.write("Full Name: " + full)
+                }
+            }
 
-  Creates 5 dice with A, K, Q, J, 10, 9.
-  Dice all roll.
-  Roll gives results of each of the 5 dice.
-
-  *************POKER DICE *************** */
-
-  function Dice(sides) {
-    this.sides = sides;
-    this.values = [];
-    for( i = 0; i <= this.sides; i++){
-      this.values[i]=i;
-    }
-
-    var pokerSide = ["A", "K", "Q", "J", "10", "9"];
-    this.poker = function() {
-      for(var i = 0; i <= this.sides; i++){
-        this.values[i] = pokerSide[i];
-      }
-    }  //curly bracket missing
+            
+        </script>
+    </form>
     
-    this.roll = function() {
-      var showing = Math.ceil(Math.random()*this.sides);
-      return this.values[showing]; // since the array start at 1
-    }
-    }
-
-  var myDice = []; //myDice was spelled as myDie
-  for (var c = 0; c < 5; c++){
-    myDice[c] = new Dice(5); 
-    myDice[c].poker();
-  }
-
-  var output = "";
-  for(var k = 0; k < 5; k++){
-    output += myDice[k].roll();
-    output += " ";
-  }
-
-  alert(output);
-
-</script>
-
 </body>
 </html>
